@@ -11,6 +11,9 @@ version    ="0.1.0"
 # https://github.com/brson/stdx 
 # https://rust-lang-nursery.github.io/rust-cookbook/
 [dependencies]
+# Authors haven't updated their vendoring, causing issues with build. Could fork to downgrade.
+# lighthouse = { git = "https://github.com/sigp/lighthouse.git", branch="stable" }
+# lighthouse-types = { git = "https://github.com/sigp/lighthouse.git", branch = "stable", package = "types" } 
 dotenv   ="0.15"
 anyhow   ="1.0"
 thiserror="1.0"
@@ -66,11 +69,3 @@ test-log = "0.2" # log only
 quickcheck = "1.0"      # lowkey proptest suite
 quickcheck_macros = "1" # derive 
 rstest = "0.16"         # testing convenience proc-macros
-
-[[test]]
-name = "integration"
-path = "tests/tests.rs"
-
-[[bench]]
-name = "bench"
-harness = false
